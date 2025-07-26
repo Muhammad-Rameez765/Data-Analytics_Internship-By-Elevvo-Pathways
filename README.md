@@ -24,7 +24,8 @@ Sales by Segment: Highlighted how different customer types contributed to overal
 This dashboard offers a clear, actionable overview of company performance, helping decision-makers understand which areas to focus on without the complexity of time-based KPIs.
 
 
-Q&A: Sales Performance Dashboard in Excel
+# Q&A: Sales Performance Dashboard in Excel
+
 🔹 Q1: What was the objective of this task?
 A: To design an Excel-based dashboard that visualizes sales performance using business dimensions like region, category, and customer segment — with interactive features like slicers and pivot charts.
 
@@ -39,11 +40,8 @@ A: I used Pivot Tables, Pivot Charts, Slicers, and functions like MID, VALUE, an
 
 🔹 Q5: What did the dashboard reveal?
 A: It showed that:
-
 West was the top-performing region
-
 Technology was the most profitable category
-
 The Consumer segment drove the highest sales volume
 
 🔹 Q6: How does interactivity help in the dashboard?
