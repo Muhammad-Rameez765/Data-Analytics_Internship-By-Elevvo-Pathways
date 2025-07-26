@@ -1,0 +1,32 @@
+# Data-Analytics_Internship-By-Elevvo-Pathways
+First Task of Internship Task 1: Sales Performance Dashboard Using Excel Dataset: Superstore Sales Dataset (Kaggle}
+
+Google Sheets: https://docs.google.com/spreadsheets/d/1r35XGgb1UxI2QvxkE1fTq-EgWqyoYEDT32UJH-ZDSMQ/edit?gid=222533370#gid=222533370
+
+# Storytelling: Sales Performance Dashboard Using Excel
+I created a Sales Performance Dashboard in Excel using the Superstore dataset from Kaggle to analyze overall sales distribution and identify top-performing business dimensions. The process started with importing the dataset into Excel and cleaning it by removing duplicates, correcting data types, and formatting the sales column as currency. I also derived useful information from text fields, like extracting the year from the Order ID, to enable better grouping in analysis.
+
+Instead of focusing on monthly trends, I chose to emphasize business dimensions like region, category, and segment, which provided more strategic insights for stakeholders. Using pivot tables, I summarized key sales metrics, then created interactive pivot charts such as bar and pie charts to visually showcase performance.
+
+I added slicers to the dashboard, allowing users to dynamically filter the data by region or product category — enhancing interactivity without needing to adjust formulas or raw data. The visualizations included:
+
+Sales by Region: Showed the West as the top-performing region
+
+Sales by Category: Revealed Technology as the highest-grossing category
+
+Sales by Segment: Highlighted how different customer types contributed to overall sales
+
+This dashboard offers a clear, actionable overview of company performance, helping decision-makers understand which areas to focus on without the complexity of time-based KPIs.
+
+# Q&A: Sales Performance Dashboard in Excel
+🔹 Q1: What was the objective of this task? A: To design an Excel-based dashboard that visualizes sales performance using business dimensions like region, category, and customer segment — with interactive features like slicers and pivot charts.
+
+🔹 Q2: How did you prepare the dataset? A: I removed duplicates, corrected formatting issues, and used formulas to convert text data into structured columns, such as extracting the year from Order ID.
+
+🔹 Q3: Why didn’t you use monthly trends or KPI cards? A: The focus was on categorical sales breakdown for strategic decision-making, rather than time-series analysis. This made the dashboard simpler, cleaner, and more relevant to stakeholders.
+
+🔹 Q4: What Excel features were used? A: I used Pivot Tables, Pivot Charts, Slicers, and functions like MID, VALUE, and TEXT to structure the data and provide dynamic interactivity.
+
+🔹 Q5: What did the dashboard reveal? A: It showed that: West was the top-performing region Technology was the most profitable category The Consumer segment drove the highest sales volume
+
+🔹 Q6: How does interactivity help in the dashboard? A: Slicers allow users to filter by region or category and instantly see changes in the visualizations — enabling non-technical users to explore insights easily.
