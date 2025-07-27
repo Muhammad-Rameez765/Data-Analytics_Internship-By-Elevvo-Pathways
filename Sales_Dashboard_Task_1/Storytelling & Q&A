@@ -1,7 +1,7 @@
 # Data-Analytics_Internship-By-Elevvo-Pathways
 First Task of Internship Task 1: Sales Performance Dashboard Using Excel Dataset: Superstore Sales Dataset (Kaggle}
 
-Google Sheets: 
+Google Sheets: https://docs.google.com/spreadsheets/d/1a9K7e4QYYg82GzC_olCke6hFF3eVSawu6qlEdvhwFno/edit?usp=sharing
 
 # Storytelling: Sales Performance Dashboard Using Excel
 I created a Sales Performance Dashboard in Excel using the Superstore dataset from Kaggle to analyze overall sales distribution and identify top-performing business dimensions. The process started with importing the dataset into Excel and cleaning it by removing duplicates, correcting data types, and formatting the sales column as currency. I also derived useful information from text fields, like extracting the year from the Order ID, to enable better grouping in analysis.
