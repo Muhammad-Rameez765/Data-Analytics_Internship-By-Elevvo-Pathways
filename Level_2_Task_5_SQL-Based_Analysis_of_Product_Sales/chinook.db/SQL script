@@ -3,8 +3,9 @@
 -- SELECT * FROM Album;
 
 
-
 SELECT name FROM sqlite_master WHERE type='table';
+
+
 SELECT
     t.Name AS ProductName,
     ar.Name AS Artist,
