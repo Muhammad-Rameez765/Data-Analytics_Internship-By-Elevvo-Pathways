@@ -1,0 +1,95 @@
+-- database: c:\Users\geeze\Downloads\Data Analytics Internship by Elevvo Pathways\Level_2\Task_5_SQL-Based_Analysis_of_Product_Sales\chinook.db\chinook.db
+
+-- SELECT * FROM Album;
+
+
+
+SELECT name FROM sqlite_master WHERE type='table';
+SELECT
+    t.Name AS ProductName,
+    ar.Name AS Artist,
+    a.Title AS Album,
+    SUM(il.Quantity) AS TotalUnitsSold,
+    ROUND(SUM(il.Quantity * il.UnitPrice), 2) AS TotalRevenue
+FROM InvoiceLine il
+JOIN Track t ON il.TrackId = t.TrackId
+JOIN Album a ON t.AlbumId = a.AlbumId
+JOIN Artist ar ON a.ArtistId = ar.ArtistId
+GROUP BY t.TrackId
+ORDER BY TotalUnitsSold DESC
+LIMIT 10;
+
+
+
+
+SELECT
+    i.BillingCountry AS Country,
+    COUNT(DISTINCT i.CustomerId) AS CustomerCount,
+    ROUND(SUM(il.UnitPrice * il.Quantity), 2) AS TotalRevenue,
+    ROUND(SUM(il.UnitPrice * il.Quantity) / COUNT(DISTINCT i.CustomerId), 2) AS AvgRevenuePerCustomer
+FROM Invoice i
+JOIN InvoiceLine il ON i.InvoiceId = il.InvoiceId
+GROUP BY i.BillingCountry
+ORDER BY TotalRevenue DESC;
+
+
+
+SELECT
+    strftime('%Y-%m', i.InvoiceDate) AS YearMonth,
+    ROUND(SUM(il.UnitPrice * il.Quantity), 2) AS TotalRevenue
+FROM Invoice i
+JOIN InvoiceLine il ON i.InvoiceId = il.InvoiceId
+GROUP BY YearMonth
+ORDER BY YearMonth;
+
+
+
+SELECT
+    t.Name AS ProductName,
+    ROUND(SUM(il.Quantity * il.UnitPrice), 2) AS TotalRevenue,
+    RANK() OVER (ORDER BY SUM(il.Quantity * il.UnitPrice) DESC) AS RevenueRank
+FROM InvoiceLine il
+JOIN Track t ON il.TrackId = t.TrackId
+GROUP BY t.TrackId
+ORDER BY RevenueRank
+LIMIT 10;
+
+
+
+-- Revenue by Genre
+
+SELECT
+    g.Name AS Genre,
+    ROUND(SUM(il.Quantity * il.UnitPrice), 2) AS TotalRevenue
+FROM InvoiceLine il
+JOIN Track t ON il.TrackId = t.TrackId
+JOIN Genre g ON t.GenreId = g.GenreId
+GROUP BY g.Name
+ORDER BY TotalRevenue DESC;
+
+
+-- Customer Lifetime Value (Top Customers)
+
+SELECT
+    c.FirstName || ' ' || c.LastName AS CustomerName,
+    ROUND(SUM(il.UnitPrice * il.Quantity), 2) AS TotalSpent
+FROM Customer c
+JOIN Invoice i ON c.CustomerId = i.CustomerId
+JOIN InvoiceLine il ON i.InvoiceId = il.InvoiceId
+GROUP BY c.CustomerId
+ORDER BY TotalSpent DESC
+LIMIT 10;
+
+
+
+-- Revenue by Media Type
+
+SELECT
+    mt.Name AS MediaType,
+    ROUND(SUM(il.UnitPrice * il.Quantity), 2) AS TotalRevenue
+FROM InvoiceLine il
+JOIN Track t ON il.TrackId = t.TrackId
+JOIN MediaType mt ON t.MediaTypeId = mt.MediaTypeId
+GROUP BY mt.Name
+ORDER BY TotalRevenue DESC;
+
